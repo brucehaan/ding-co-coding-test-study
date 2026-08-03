@@ -13,6 +13,21 @@ public class Main1 {
         return max;
     }
 
+    public static int findMaxNumAnswer(int[] array) {
+        for (int number : array) {
+            boolean isMaxNum = true;
+            for (int compareNumber : array) {
+                if (number < compareNumber) {
+                    isMaxNum = false;
+                }
+            }
+            if (isMaxNum) {
+                return number;
+            }
+        }
+        return 0;
+    }
+
     public static void main(String[] args) {
         int[] arr1 = {3, 5, 6, 1, 2, 4};
         int[] arr2 = {6, 6, 6};
@@ -23,9 +38,9 @@ public class Main1 {
                 43, 5, 6, 1, 2, 43, 5, 6, 1, 2, 43, 5, 6, 1, 2, 43, 5, 6, 1, 2, 43, 5,
                 6, 1, 2, 43, 5, 6, 1, 2, 43, 5, 6, 1, 2, 43, 5, 6, 1, 2, 43, 5, 6, 1, 2, 4};
 
-        System.out.println("정답 = 6 / 현재 풀이 값 = " + findMaxNum(arr1));
-        System.out.println("정답 = 6 / 현재 풀이 값 = " + findMaxNum(arr2));
-        System.out.println("정답 = 1888 / 현재 풀이 값 = " + findMaxNum(arr3));
-        System.out.println("정답 = 43 / 현재 풀이 값 = " + findMaxNum(arr4));
+        System.out.println("정답 = 6 / 현재 풀이 값 = " + findMaxNumAnswer(arr1));
+        System.out.println("정답 = 6 / 현재 풀이 값 = " + findMaxNumAnswer(arr2));
+        System.out.println("정답 = 1888 / 현재 풀이 값 = " + findMaxNumAnswer(arr3));
+        System.out.println("정답 = 43 / 현재 풀이 값 = " + findMaxNumAnswer(arr4));
     }
 }
