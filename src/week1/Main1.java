@@ -10,7 +10,7 @@ public class Main1 {
         for (int j : array) {
             if (j > max) max = j;
         }
-        return IntStream.of(array).max();
+        return max;
     }
 
     public static void main(String[] args) {
