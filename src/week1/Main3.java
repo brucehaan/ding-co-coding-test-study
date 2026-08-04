@@ -5,9 +5,11 @@ public class Main3 {
     public static int findMaxPlusOrMultiply(int[] array) {
         int answer = 0;
         for (int i : array) {
-            if (answer == 0) answer += i;
-            else if (i == 0 || i == 1) answer += i;
-            else answer *= i;
+            if (i <= 1 || answer <= 1) {
+                answer += i;
+            } else {
+                answer *= i;
+            }
         }
         return answer;
     }
