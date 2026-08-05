@@ -7,16 +7,15 @@ public class Main6 {
 
     public static List<Integer> findPrimeListUnderNumber(int number) {
         List<Integer> list = new ArrayList<>();
-        list.add(2);
-        for (int i = 3; i <= number; i++) {
-            for (int j = 2; j < i; j++) {
-                if (i % j == 0) {
-                    if (list.contains(i)) list.remove(Integer.valueOf(i));
+        for (int n = 2; n <= number; n++) {
+            boolean isPrime = true;
+            for(int i : list) {
+                if (i * i <= n && n % i == 0) {
+                    isPrime = false;
                     break;
                 }
-                if (list.contains(i)) break;
-                list.add(i);
             }
+            if (isPrime) list.add(n);
         }
         return list;
     }
