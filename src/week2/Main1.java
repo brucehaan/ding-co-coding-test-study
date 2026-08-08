@@ -1,12 +1,16 @@
 package week2;
 
-class Node {
-    int data;
-    Node next;
+import week2.LinkedListPrintAllNode.Node;
 
-    public Node(int data) {
-        this.data = data;
-        this.next = null;
+class LinkedListPrintAllNode {
+    static class Node {
+        int data;
+        Node next;
+
+        public Node(int data) {
+            this.data = data;
+            this.next = null;
+        }
     }
 }
 
@@ -36,8 +40,8 @@ class LinkedList {
 
 public class Main1 {
     public static void main(String[] args) {
-        LinkedList linkedList = new LinkedList(5);
-        linkedList.append(12);
-        linkedList.printAll();
+        LinkedListMain2 linkedListMain2 = new LinkedListMain2(5);
+        linkedListMain2.append(12);
+        linkedListMain2.printAll();
     }
 }
